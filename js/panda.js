@@ -5,9 +5,8 @@ for (const h2 of allH2Tags) {
 }
 
 //3. backpack background color change
-document.getElementById('backpack').addEventListener('click', function () {
-    backpack.style.backgroundColor = 'antiquewhite';
-})
+const backPack = document.getElementById('backpack');
+backPack.style.backgroundColor = 'antiquewhite';
 
 
 //4. all card radius change
@@ -22,13 +21,14 @@ function xboxButton() {
 }
 
 
-//6. display none in click handler (Need more information)
-function hideButton() {
-    const allButtons = document.getElementsByClassName('btn');
-    for (const btn of allButtons) {
-        btn.style.display = 'none';
-    }
+//6. display none in click handler
+const allButtons = document.getElementsByClassName('btn');
+for (const button of allButtons) {
+    button.addEventListener('click', function (event) {
+        event.target.style.display = 'none';
+    })
 }
+
 
 //7. button disable
 document.getElementById('exampleInputEmail1').addEventListener('keyup', function (event) {
@@ -43,13 +43,21 @@ document.getElementById('exampleInputEmail1').addEventListener('keyup', function
     }
 })
 
+//8. changing image in mouseenter
+document.getElementById('lal-bag').addEventListener('mouseenter', function (event) {
+    event.target.src = "images/shoes/shoe-2.png";
+})
 
-// document.getElementById('laltu-bag').addEventListener('mouseenter', function () {
-//     console.log('Event show mouse enter');
-// })
-// const myImage = new Image(100, 200);
-// myImage.src = 'picture.jpg';
-// document.body.appendChild(myImage);
+document.getElementById('lal-bag').addEventListener('mouseout', function (event) {
+    event.target.src = "images/bags/bag-1.png";
+})
+
+document.getElementById('red-shoe').addEventListener('mouseenter', function (event) {
+    event.target.src = "images/bags/bag-2.png";
+})
+document.getElementById('red-shoe').addEventListener('mouseout', function (event) {
+    event.target.src = "images/shoes/shoe-3.png";
+})
 
 
 
